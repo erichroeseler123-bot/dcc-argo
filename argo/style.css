@@ -109,3 +109,23 @@ footer {
   header h1 { font-size: 2.2em; }
   table { font-size: 0.9em; }
 }
+/* === Hero Image Sizing Fix === */
+.hero-image {
+  max-width: 500px;          /* Caps width at 500px on large screens */
+  max-height: 500px;         /* Caps height to keep it roughly square-ish */
+  width: 100%;               /* Fills container on smaller screens */
+  height: auto;              /* Keeps aspect ratio */
+  object-fit: cover;         /* Crops nicely if image isn't square */
+  border-radius: 12px;
+  margin: 20px auto;         /* Centers horizontally with some breathing room */
+  display: block;            /* Removes bottom gap */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-image {
+    max-width: 100%;         /* Full width on phones/tablets */
+    max-height: 300px;       /* Smaller vertical footprint on mobile */
+  }
+}
